@@ -1,6 +1,6 @@
 == README
 
-Heroku path: https://sarinrubyharj.herokuapp.com/
+Heroku path: https://sarinrubyharj.herokuapp.com/breweries
 
 
 Please feel free to use a different markup language if you do not plan to run
