@@ -1,5 +1,18 @@
 <h1>New Beer</h1>
 
-<%= render 'form' %>
 
+<%= form_for(@beer) do |f| %>
+    <p>
+    name: <%= f.text_field :name %>
+    </p>
+    <p>
+    style: <%= select_tag(:style, options_for_select(@styles)) %>
+    </p>
+    brewery: <%= f.collection_select(:brewery_id, Brewery.all, :id, :name) %>
+<p></p>
+    <%= f.submit %>
+</p>
+<% end %>
+<p></p>
 <%= link_to 'Back', beers_path %>
+
