@@ -6,6 +6,7 @@ require 'capybara/rspec'
 require 'spec_helper'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
+require 'webmock/rspec'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -56,4 +57,5 @@ RSpec.configure do |config|
     fill_in('password', with:credentials[:password])
     click_button('Log in')
   end
+
 end

@@ -1,5 +1,11 @@
 FactoryGirl.define do
 
+factory :style do
+    name "MyString"
+description "MyText"
+  end
+
+
   factory :user do
     username "Pekka"
     password "Foobar1"
@@ -21,6 +27,6 @@ FactoryGirl.define do
     factory :beer do
       name "anonymous"
       brewery
-      style "Lager"
+      style
     end
 end

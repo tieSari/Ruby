@@ -1,1 +1,69 @@
 https://sarinrubyharj.herokuapp.com/
+sari.rautanen@cs.helsinki.fi
+-käyttis herokuun
+
+Your API Key: 511d669d16427ab7298ea1e1b967fc7a
+http://beermapping.com/api/examples/
+
+http://beermapping.com/webservice/loccity/511d669d16427ab7298ea1e1b967fc7a/helsinki
+
+palvelu on ajoittain erittäin hidas. Voitkin käyttää sen sijaan saman datan tarjoavaa kurssia varten tehtyä, osoitteessa http://stark-oasis-9187.herokuapp.com/api/ toimivaa 'välimuistipalvelinta'. Esim. Helsingin tiedot saat välimuistipalvelimelta urlista http://stark-oasis-9187.herokuapp.com/api/helsinki
+
+curl http://beermapping.com/webservice/loccity/511d669d16427ab7298ea1e1b967fc7a/espoo
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<bmp-locations>
+  <location type="array">    <location>
+      <id>13307</id>
+      <name>O'Connell's Irish Bar</name>
+      <status>Beer Bar</status>
+      <reviewlink>http://beermapping.com/maps/reviews/reviews.php?locid=13307</reviewlink>
+      <proxylink>http://beermapping.com/maps/proxymaps.php?locid=13307&amp;d=5</proxylink>
+      <blogmap>http://beermapping.com/maps/blogproxy.php?locid=13307&amp;d=1&amp;type=norm</blogmap>
+      <street>Rautatienkatu 24</street>
+      <city>Tampere</city>
+      <state nil="true"/>
+      <zip>33100</zip>
+      <country>Finland</country>
+      <phone>35832227032</phone>
+      <overall>0</overall>
+      <imagecount>0</imagecount>
+    </location>
+    <location>
+      <id>18845</id>
+      <name>Pyynikin käsityöläispanimo</name>
+      <status>Brewery</status>
+      <reviewlink>http://beermapping.com/maps/reviews/reviews.php?locid=18845</reviewlink>
+      <proxylink>http://beermapping.com/maps/proxymaps.php?locid=18845&amp;d=5</proxylink>
+      <blogmap>http://beermapping.com/maps/blogproxy.php?locid=18845&amp;d=1&amp;type=norm</blogmap>
+      <street>Tesoman valtatie 24</street>
+      <city>Tampere</city>
+      <state nil="true"/>
+      <zip>33300</zip>
+      <country>Finland</country>
+      <phone nil="true"/>
+      <overall>0</overall>
+      <imagecount>0</imagecount>
+    </location>
+    <location>
+      <id>18857</id>
+      <name>Panimoravintola Plevna</name>
+      <status>Brewpub</status>
+      <reviewlink>http://beermapping.com/maps/reviews/reviews.php?locid=18857</reviewlink>
+      <proxylink>http://beermapping.com/maps/proxymaps.php?locid=18857&amp;d=5</proxylink>
+      <blogmap>http://beermapping.com/maps/blogproxy.php?locid=18857&amp;d=1&amp;type=norm</blogmap>
+      <street>Itäinenkatu 8</street>
+      <city>Tampere</city>
+      <state nil="true"/>
+      <zip>33210</zip>
+      <country>Finland</country>
+      <phone nil="true"/>
+      <overall>0</overall>
+      <imagecount>0</imagecount>
+    </location>
+  </location>
+</bmp-locations>
+
+rails g migration RemoveStyleFromBeer style:text
+

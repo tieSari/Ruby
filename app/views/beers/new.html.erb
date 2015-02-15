@@ -6,7 +6,7 @@
     name: <%= f.text_field :name %>
     </p>
     <p>
-    style: <%= select_tag(:style, options_for_select(@styles)) %>
+      style: <%= f.collection_select(:style_id, Style.all, :id, :name) %>
     </p>
     brewery: <%= f.collection_select(:brewery_id, Brewery.all, :id, :name) %>
 <p></p>
