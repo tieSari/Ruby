@@ -8,8 +8,8 @@
 <% if @user.ratings.empty? %>
     user has not yet ratings!
 <% else %>
-    Has <%= pluralize(@user.ratings.count, 'rating', 'ratings')%>, average
-    <%=  @user.average_rating %>
+    Has <%= pluralize(@user.ratings.count, 'rating', 'ratings') %>, average
+    <%= round(@user.average_rating) %>
     <p>
       <strong>Ratings:</strong>
     <ul>
@@ -17,14 +17,24 @@
           <li>
             <%= rating %>
             <% if @user == current_user %>
-                <%= link_to 'delete', rating, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'delete', rating, method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger" %>
             <% end %>
           </li>
       <% end %>
     </ul>
 
 <% end %>
-<% if @user == current_user %>
-<%= link_to 'Edit', edit_user_path(@user) %> |
+
+<% if !current_user.nil? and current_user.admin==true %>
+
+    <% if @user.froze %>
+        <p>
+        <h3><span class="label label-info">Account frozen</span></h3>
+        </p>
+    <% end %>
+    <p>
+      <%= link_to 'Toggle froze account', method: froze(@user), class: "btn btn-default" %>
+    </p>
 <% end %>
-<%= link_to 'Back', users_path %>
+<%= edit_and_destroy_buttons(@user) %>
+<%= link_to 'Back', users_path, class: "btn btn-default" %>

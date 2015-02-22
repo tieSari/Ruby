@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
     redirect_to signin_path, notice:'you should be signed in' if current_user.nil?
   end
 
+  def ensure_that_admin
+    redirect_to :back, notice:'only admin can delete items' if current_user.admin.nil? or current_user.admin==false
+  end
+
 end

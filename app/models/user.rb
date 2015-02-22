@@ -12,6 +12,12 @@ class User < ActiveRecord::Base
 
   def favorite_beer
     return nil if ratings.empty?
-    ratings.sort_by{ |r| r.score }.last.beer
+    ratings.sort_by { |r| r.score }.last.beer
   end
+
+  def self.top(n)
+    sorted_by_ratingCount_in_desc_order = User.all.sort_by { |b| -(b.ratings.count) }
+    sorted_by_ratingCount_in_desc_order.take(3)
+  end
+
 end

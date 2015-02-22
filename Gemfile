@@ -63,5 +63,10 @@ gem 'simplecov', require: false
 end
 gem 'rspec-its'
 gem 'httparty'
+
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
 end
 
