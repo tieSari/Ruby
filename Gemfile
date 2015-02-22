@@ -64,7 +64,8 @@ end
 gem 'rspec-its'
 gem 'httparty'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.3'
+
 group :development do
   gem 'rails_layout'
 end
