@@ -60,14 +60,17 @@ group :test do
   gem 'capybara'
   gem 'launchy'
 gem 'simplecov', require: false
-#gem 'webmock'
+gem 'webmock'
+gem 'selenium-webdriver'
+gem 'database_cleaner'
 end
 gem 'rspec-its'
 gem 'httparty'
 
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'rack-mini-profiler'
 
 group :development do
   gem 'rails_layout'
 end
-
+gem 'jquery-turbolinks'

@@ -1,4 +1,9 @@
+<div style="border-style: solid;">
+  ratinglist: <%= ActionController::Base.new.fragment_exist?( 'ratingslist' )  %>
+  <br>
+</div>
 <h1>Listing Ratings</h1>
+<% cache 'ratingslist', expires_in: 10.minutes do %>
 <p> Number of ratings: <%= @ratings.count %> </p>
 <div class="row">
   <div class="col-md-3">
@@ -19,7 +24,7 @@
     <%= render 'listStyle', styles: @top_styles %>
   </div>
 </div>
-
+<%end%>
 <p>
   <%= link_to 'New rating', new_rating_path, class: "btn btn-primary" %>
 </p>
